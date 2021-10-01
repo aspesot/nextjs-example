@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import Title from '../../components/title';
+import Head from 'next/head';
 
 export default function user({ user }) {
     const router = useRouter();
@@ -11,6 +12,10 @@ export default function user({ user }) {
 
     return (
         <Layout>
+            <Head>
+                <title>User #{user.id}</title>
+                <meta name="description" content="Esto es un ejemplo de next js"/>
+            </Head>
             <Title>User ID: {user.id}</Title>
             <div className='card'>
                 <h3>User</h3>

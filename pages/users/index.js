@@ -2,10 +2,15 @@
 import Layout from "../../components/layout"
 import Title from "../../components/title"
 import Link from 'next/link'
+import Head from "next/head"
 
 export default function Users({ users }) {
     return (
         <Layout>
+          <Head>
+                <title>Users Landing Page!</title>
+                <meta name="description" content="Esto es un ejemplo de next js"/>
+            </Head>
             <Title>Users Page</Title>
             <div className='grid'>
                 {users.map(user => {
