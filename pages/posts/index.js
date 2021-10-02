@@ -17,7 +17,7 @@ export default function Posts({ posts }) {
     //     fetchPost();
     // },[])
     return (
-        <Layout>
+        <>
           <Head>
                 <title>Posts Landing Page!</title>
                 <meta name="description" content="Esto es un ejemplo de next js"/>
@@ -72,7 +72,7 @@ export default function Posts({ posts }) {
           }
         `}
       </style>
-        </Layout>
+        </>
     )
 }
 

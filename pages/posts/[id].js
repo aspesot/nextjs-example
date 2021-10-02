@@ -5,7 +5,7 @@ import Head from 'next/head';
 export default function post({ post }) {
 
     return (
-        <Layout>
+        <>
           <Head>
                 <title>Posts #{post.id}</title>
                 <meta name="description" content="Esto es un ejemplo de next js"/>
@@ -45,7 +45,7 @@ export default function post({ post }) {
         }
       `}
       </style>
-        </Layout>
+        </>
     )
 }
 

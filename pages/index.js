@@ -4,7 +4,7 @@ import Head from "next/head"
 
 export default function Home(){
     return (
-        <Layout>
+        <>
             <Head>
                 <title>Aprendamos NextJS con Webtutoriales!</title>
                 <meta name="description" content="Esto es un ejemplo de next js"/>
@@ -21,6 +21,6 @@ export default function Home(){
                     }
                 `}
             </style>
-        </Layout>
+        </>
     )
 }

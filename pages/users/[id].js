@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Layout from '../../components/layout';
 import Title from '../../components/title';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -12,7 +11,7 @@ export default function user({ user }) {
     }
 
     return (
-        <Layout>
+        <>
             <Head>
                 <title>User #{user.id}</title>
                 <meta name="description" content="Esto es un ejemplo de next js"/>
@@ -59,7 +58,7 @@ export default function user({ user }) {
           }
         `}
             </style>
-        </Layout>
+        </>
     )
 }
 

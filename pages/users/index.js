@@ -1,32 +1,30 @@
-
-import Layout from "../../components/layout"
 import Title from "../../components/title"
 import Link from 'next/link'
 import Head from "next/head"
 
 export default function Users({ users }) {
-    return (
-        <Layout>
-          <Head>
-                <title>Users Landing Page!</title>
-                <meta name="description" content="Esto es un ejemplo de next js"/>
-            </Head>
-            <Title>Users Page</Title>
-            <div className='grid'>
-                {users.map(user => {
-                    return (
-                        <Link href={'/users/[id]'} as={`/users/${user.id}`} key={user.id}>
-                            <a className="card">
-                            <h3>User</h3>
-                            <p>Name: {user.name}</p>
-                            <p>Email: {user.email}</p>
-                            </a>
-                        </Link>
-                    )
-                })}
-            </div>
-            <style jsx>
-      {`
+  return (
+    <>
+      <Head>
+        <title>Users Landing Page!</title>
+        <meta name="description" content="Esto es un ejemplo de next js" />
+      </Head>
+      <Title>Users Page</Title>
+      <div className='grid'>
+        {users.map(user => {
+          return (
+            <Link href={'/users/[id]'} as={`/users/${user.id}`} key={user.id}>
+              <a className="card">
+                <h3>User</h3>
+                <p>Name: {user.name}</p>
+                <p>Email: {user.email}</p>
+              </a>
+            </Link>
+          )
+        })}
+      </div>
+      <style jsx>
+        {`
         .grid {
           display: flex;
           align-items: center;
@@ -63,17 +61,17 @@ export default function Users({ users }) {
         }
       `}
       </style>
-        </Layout>
-    )
+    </>
+  )
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await res.json();
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await res.json();
 
-    return {
-        props: {
-            users
-        }
+  return {
+    props: {
+      users
     }
+  }
 }
